@@ -43,4 +43,5 @@ router.post('problems/due', [() => import('#controllers/user_problems_controller
 )
 
 router.post('session', [SessionController, 'store'])
+router.post('session/register', [() => import('#controllers/users_controller'), 'store'])
 router.delete('session', [SessionController, 'destroy']).use(middleware.auth({ guards: ['api'] }))
